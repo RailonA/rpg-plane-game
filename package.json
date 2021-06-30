@@ -1,0 +1,25 @@
+{
+    "name": "rpg-environment",
+    "version": "1.0.0",
+    "main": "index.js",
+    "license": "MIT",
+    "devDependencies": {
+      "babel-core": "6",
+      "babel-loader": "^7.0.0",
+      "babel-preset-env": "^1.7.0",
+      "copy-webpack-plugin": "^9.0.1",
+      "webpack": "^5.41.1",
+      "webpack-cli": "^4.7.2",
+      "webpack-dev-middleware": "^5.0.0",
+      "webpack-dev-server": "^3.11.2",
+      "webpack-hot-middleware": "^2.25.0"
+    },
+    "scripts" : {
+      "dev": "webpack --mode development",
+      "build": "webpack --mode production"
+      },
+    "dependencies": {
+      "phaser": "^3.0.0"
+    }
+  }
+  
