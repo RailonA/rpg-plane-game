@@ -20,6 +20,8 @@ const GameScene = class extends Phaser.Scene {
     this.load.image('Lifes', './assets/game/life.png');
 
     this.load.image('PlayerPlane', './assets/player/player.png');
+    this.load.image('PlayerPlaneLeft', './assets/player/playerLeft.png');
+    this.load.image('PlayerPlaneRight', './assets/player/playerRight.png');
 
 
   }
@@ -39,6 +41,26 @@ const GameScene = class extends Phaser.Scene {
     for (let width = 0; width < mainWidth; width += 2048) {
       platforms.create(width, GAME_HEIGHT, 'ground').refreshBody();
     }
+
+    this.anims.create({
+      key: 'left',
+      frames: [ { key: 'PlayerPlaneLeft', frame: 0 } ],
+      frameRate: 10,
+      repeat: -1
+  });
+
+  this.anims.create({
+      key: 'turn',
+      frames: [ { key: 'PlayerPlane', frame: 0 } ],
+      frameRate: 20
+  });
+
+  this.anims.create({
+      key: 'right',
+      frames: [ { key: 'PlayerPlaneRight', frame: 0 } ],
+      frameRate: 10,
+      repeat: -1
+  });
 
     cursors = this.input.keyboard.createCursorKeys();
 
