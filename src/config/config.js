@@ -8,6 +8,9 @@ export default {
   height: GAME_HEIGHT,
   physics: {
     default: 'arcade'
-    }
+    },
+    dom: {
+      createContainer: true,
+    },
   }
   

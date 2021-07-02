@@ -8,7 +8,7 @@ export default class TitleScene extends Phaser.Scene {
   }
 
   create () {
-    
+
     const image = this.add.image(this.cameras.main.width / 2, this.cameras.main.height / 2, 'bg-2');
     const scaleX = this.cameras.main.width / image.width;
     const scaleY = this.cameras.main.height / image.height;

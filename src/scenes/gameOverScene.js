@@ -1,6 +1,6 @@
 import Phaser from 'phaser';
 
-import config from '../config';
+import config from '../config/config';
 import Button from '../elements/Button';
 import { postScore } from '../entities/apiData';
 
@@ -48,9 +48,9 @@ class GameOverScene extends Phaser.Scene {
     postScore(this.model.userName, this.model.score);
 
     this.gameButton = new Button(this, config.width / 1.57, (config.height / 2) + 100,
-      'Button1', 'Button2', 'Restart', 'Game');
+      'blueButton1', 'blueButton2', 'Restart', 'Game');
     this.gameButton = new Button(this, config.width / 4.5, (config.height / 2) + 100,
-      'Button1', 'Button2', 'Submit', 'DisplayScore');
+      'blueButton1', 'blueButton2', 'Submit', 'DisplayScore');
   }
 }
 

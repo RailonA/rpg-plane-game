@@ -1,37 +1,36 @@
 import Phaser from 'phaser';
-import Button from '../objects/button';
 
-export default class OptionsScene extends Phaser.Scene {
-  constructor () {
+import config from '../config/config';
+import Button from '../elements/Button';
+
+/* eslint no-undef: "error" */
+
+const OptionsScene = class extends Phaser.Scene {
+  constructor() {
     super('Options');
   }
 
-  create () {
-    this.add.image(this.cameras.main.width / 2, this.cameras.main.height / 2, 'bg-3');
+  create() {
+    const image = this.add.image(this.cameras.main.width / 2, this.cameras.main.height / 2, 'bg-3');
+    const scaleX = this.cameras.main.width / image.width;
+    const scaleY = this.cameras.main.height / image.height;
+    const scale = Math.max(scaleX, scaleY);
+    image.setScale(scale).setScrollFactor(1);
 
     this.model = this.sys.game.globals.model;
 
-    this.text = this.add.text(300, 100, 'Options', { fontSize: 40 });
-    this.musicButton = this.add.image(200, 200, 'checkedBox');
-    this.musicText = this.add.text(250, 190, 'Music Enabled', { fontSize: 24 });
-
-    this.soundButton = this.add.image(200, 300, 'checkedBox');
-    this.soundText = this.add.text(250, 290, 'Sound Enabled', { fontSize: 24 });
+    this.text = this.add.text(300, 50, 'Options', { fontSize: 40 });
+    this.musicButton = this.add.image(200, 100, 'uncheckedBox');
+    this.musicText = this.add.text(250, 100, 'Music Enabled', { fontSize: 24 });
 
     this.musicButton.setInteractive();
-    this.soundButton.setInteractive();
 
-    this.musicButton.on('pointerdown', function () {
+    this.musicButton.on('pointerdown', () => {
       this.model.musicOn = !this.model.musicOn;
       this.updateAudio();
-    }.bind(this));
+    });
 
-    this.soundButton.on('pointerdown', function () {
-      this.model.soundOn = !this.model.soundOn;
-      this.updateAudio();
-    }.bind(this));
-
-    this.menuButton = new Button(this, 400, 500, 'blueButton1', 'blueButton2', 'Menu', 'Title');
+    this.gameButton = new Button(this, (config.width / 2), (config.height / 2) + 100, 'blueButton1', 'blueButton2', 'Back', 'Title');
 
     this.updateAudio();
   }
@@ -48,11 +47,7 @@ export default class OptionsScene extends Phaser.Scene {
         this.model.bgMusicPlaying = true;
       }
     }
-
-    if (this.model.soundOn === false) {
-      this.soundButton.setTexture('uncheckedBox');
-    } else {
-      this.soundButton.setTexture('checkedBox');
-    }
   }
-}
+};
+
+export default OptionsScene;
