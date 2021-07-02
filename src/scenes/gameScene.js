@@ -74,8 +74,8 @@ const GameScene = class extends Phaser.Scene {
     this.playerScore = this.add.text(40, 60, 'Score: 0', {
       fontFamily: 'monospace',
       fontSize: 30,
+      color: '#fff',
       fontStyle: 'bold',
-      color: '#000000',
     });
 
     this.player.setScale(1.0);
