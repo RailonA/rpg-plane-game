@@ -10,8 +10,6 @@ export default class PreloaderScene extends Phaser.Scene {
   }
 
   preload () {
-    // add logo image
-    //  this.add.image(400, 200, 'sample');
 
     // display progress bar
     var progressBar = this.add.graphics();
@@ -80,12 +78,19 @@ export default class PreloaderScene extends Phaser.Scene {
     this.timedEvent = this.time.delayedCall(3000, this.ready, [], this);
 
     // load assets needed in our game
-    this.load.image('bg-2', 'assets/background/Background-2.png');
-    this.load.image('blueButton1', 'assets/ui/blue_button02.png');
-    this.load.image('blueButton2', 'assets/ui/blue_button03.png');
-    this.load.image('sample', 'assets/sample.png');
-    this.load.image('checkedBox', 'assets/ui/blue_boxCheckmark.png');
-    this.load.audio('bgMusic', ['assets/TownTheme.mp3']);
+
+    this.load.image('bg-1', './assets/background/Background-1.png');
+    this.load.image('bg-2', './assets/background/Background-2.png');
+    this.load.image('bg-3', './assets/background/Background-3.png');
+    this.load.image('bg-4', './assets/background/Background-4.png');
+
+    this.load.image('blueButton1', './assets/ui/blue_button02.png');
+    this.load.image('blueButton2', './assets/ui/blue_button03.png');
+    
+    this.load.image('sample', './assets/sample.png');
+    this.load.image('checkedBox', './assets/ui/blue_boxCheckmark.png');
+    this.load.image('uncheckedBox', './assets/ui/grey_box.png');
+    this.load.audio('bgMusic', ['./assets/battleMus.mp3']);
   }
 
   ready () {

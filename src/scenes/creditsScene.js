@@ -1,49 +1,67 @@
 import Phaser from 'phaser';
 import config from '../config/config';
 
-export default class CreditsScene extends Phaser.Scene {
-  constructor () {
+/* eslint no-undef: "error" */
+
+const CreditsScene = class extends Phaser.Scene {
+  constructor() {
     super('Credits');
   }
 
-  create () {
-    this.creditsText = this.add.text(0, 0, 'Credits', { fontSize: '32px', fill: '#fff' });
-    this.madeByText = this.add.text(0, 0, 'Created By: Placeholder', { fontSize: '26px', fill: '#fff' });
-    this.zone = this.add.zone(config.width/2, config.height/2, config.width, config.height);
+  create() {
+    const image = this.add.image(this.cameras.main.width / 2, this.cameras.main.height / 2, 'bg-3');
+    const scaleX = this.cameras.main.width / image.width;
+    const scaleY = this.cameras.main.height / image.height;
+    const scale = Math.max(scaleX, scaleY);
+    image.setScale(scale).setScrollFactor(1);
 
-    Phaser.Display.Align.In.Center(
-      this.creditsText,
-      this.zone
-    );
+    this.creditsMicroverseText = this.add.text(0, 0, 'Special credits to Microverse', { fontSize: '32px', fill: '#c41425' });
+    this.createdByText = this.add.text(0, 0, 'Created By: Railon Acosta', { fontSize: '26px', fill: '#edc811' });
+    this.emailText = this.add.text(0, 0, 'railonacosta@gmail.com', { fontSize: '18px', fill: '#32a852' });
+    this.openGameArt = this.add.text((config.width / 2) - 600, config.height / 2, 'Special thanks to the Developers at the OpenGameArt, for the sound, music and characters', { fontSize: '20px', fill: '#fff' });
+    this.zone = this.add.zone(config.width / 2, config.height / 2, config.width, config.height);
 
-    Phaser.Display.Align.In.Center(
-      this.madeByText,
-      this.zone
-    );
-
-    this.madeByText.setY(1000);
+    this.createdByText.setY(1000);
+    this.emailText.setY(900);
 
     this.creditsTween = this.tweens.add({
-      targets: this.creditsText,
-      y: -100,
-      ease: 'Power1',
+      targets: this.creditsMicroverseText,
+      y: 0,
+      ease: 'Power3',
       duration: 3000,
-      delay: 1000,
-      onComplete: function () {
-        this.destroy;
-      }
     });
 
-    this.madeByTween = this.tweens.add({
-      targets: this.madeByText,
-      y: -300,
-      ease: 'Power1',
-      duration: 8000,
-      delay: 1000,
-      onComplete: function () {
-        this.madeByTween.destroy;
-        this.scene.start('Title');
-      }.bind(this)
+    this.createdByTween = this.tweens.add({
+      targets: this.createdByText,
+      y: 30,
+      ease: 'Power3',
+      duration: 3000,
+      onComplete: function x() {
+      },
+    });
+
+    this.emailTween = this.tweens.add({
+      targets: this.emailText,
+      y: 60,
+      ease: 'Power3',
+      duration: 3000,
+      onComplete: function x() {
+
+      },
+    });
+
+    this.creditsOpenTween = this.tweens.add({
+      targets: this.openGameArt,
+      y: 80,
+      ease: 'Power3',
+      duration: 3000,
+      onComplete: function x() {
+        setTimeout(() => {
+          this.scene.start('Title');
+        }, 5000);
+      }.bind(this),
     });
   }
-}
+};
+
+export default CreditsScene;

@@ -7,7 +7,8 @@ export default class OptionsScene extends Phaser.Scene {
   }
 
   create () {
-    
+    this.add.image(this.cameras.main.width / 2, this.cameras.main.height / 2, 'bg-3');
+
     this.model = this.sys.game.globals.model;
 
     this.text = this.add.text(300, 100, 'Options', { fontSize: 40 });
@@ -37,7 +38,7 @@ export default class OptionsScene extends Phaser.Scene {
 
   updateAudio() {
     if (this.model.musicOn === false) {
-      this.musicButton.setTexture('box');
+      this.musicButton.setTexture('uncheckedBox');
       this.sys.game.globals.bgMusic.stop();
       this.model.bgMusicPlaying = false;
     } else {
@@ -49,7 +50,7 @@ export default class OptionsScene extends Phaser.Scene {
     }
 
     if (this.model.soundOn === false) {
-      this.soundButton.setTexture('box');
+      this.soundButton.setTexture('uncheckedBox');
     } else {
       this.soundButton.setTexture('checkedBox');
     }
