@@ -41,7 +41,7 @@ The rest of the days are for the following:
 ## Live Demo
 
 
-[gh pages deployment](https://addod19.github.io/js_game_capstone/)
+[gh pages deployment](https://railona.github.io/rpg-plane-game/)
 
 ## Video Presentation
 
