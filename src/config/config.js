@@ -7,10 +7,9 @@ export default {
   width: GAME_WIDTH,
   height: GAME_HEIGHT,
   physics: {
-    default: 'arcade'
-    },
-    dom: {
-      createContainer: true,
-    },
-  }
-  
+    default: 'arcade',
+  },
+  dom: {
+    createContainer: true,
+  },
+};

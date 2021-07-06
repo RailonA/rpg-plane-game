@@ -52,7 +52,7 @@ const GuideScene = class extends Phaser.Scene {
       color: '#fff',
       align: 'center',
     });
-    
+
     const style = 'width: 100px; height: 277px; border: none; font: 32px Georgia; color: #fff;';
     const gameButton = this.add.dom(950, 180, 'blueButton1', style, 'Play');
 

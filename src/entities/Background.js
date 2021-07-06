@@ -11,8 +11,8 @@ const Background = class {
     this.layers = this.scene.add.group();
 
     this.createLayers();
-
   }
+
   preload() {
     this.load.image('bg-1', './assets/background/Background-1.png');
   }

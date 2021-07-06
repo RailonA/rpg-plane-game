@@ -5,7 +5,6 @@ import Button from '../elements/Button';
 import { postScore } from '../entities/apiData';
 
 const GameOverScene = class extends Phaser.Scene {
-
   constructor() {
     super({ key: 'GameOver' });
   }
@@ -53,6 +52,6 @@ const GameOverScene = class extends Phaser.Scene {
     this.gameButton = new Button(this, config.width / 4.5, (config.height / 2) + 100,
       'blueButton1', 'blueButton2', 'Submit', 'DisplayScore');
   }
-}
+};
 
 export default GameOverScene;

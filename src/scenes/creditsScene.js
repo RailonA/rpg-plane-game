@@ -2,7 +2,6 @@ import Phaser from 'phaser';
 import config from '../config/config';
 import Button from '../elements/Button';
 
-
 /* eslint no-undef: "error" */
 
 const CreditsScene = class extends Phaser.Scene {
@@ -65,7 +64,6 @@ const CreditsScene = class extends Phaser.Scene {
     });
 
     this.gameButton = new Button(this, (config.width / 2), (config.height / 2) + 100, 'blueButton1', 'blueButton2', 'Back', 'Title');
-
   }
 };
 

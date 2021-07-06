@@ -3,7 +3,7 @@ import Phaser from 'phaser';
 /* eslint no-undef: 'error' */
 /* eslint import/no-unresolved: 'error' */
 
-const BootScene = class extends Phaser.Scene {
+export default class BootScene extends Phaser.Scene {
   constructor() {
     super('Boot');
   }
@@ -33,6 +33,4 @@ const BootScene = class extends Phaser.Scene {
   create() {
     this.scene.start('Preloader');
   }
-};
-
-export default BootScene;
+}

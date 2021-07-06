@@ -1,3 +1,4 @@
+/* eslint-disable no-underscore-dangle */
 import Phaser from 'phaser';
 import { GAME_HEIGHT, GAME_WIDTH } from '../config/const-variable';
 
@@ -8,6 +9,7 @@ import ChaserShip from '../entities/Enemy1';
 import GunShip from '../entities/GunShip';
 import CarrierShip from '../entities/Enemy2';
 import Background from '../entities/Background';
+
 let platforms;
 /* eslint no-undef: 'error' */
 /* eslint no-plusplus: "error" */
@@ -43,11 +45,9 @@ const GameScene = class extends Phaser.Scene {
       const bg = new Background(this, 'bg-1', i * 10);
       this.backgrounds.push(bg);
     }
-
   }
 
   create() {
-
     platforms = this.physics.add.staticGroup();
 
     this.cameras.main.setBounds(0, 0, GAME_WIDTH * 100, GAME_HEIGHT).setName('main');
@@ -58,8 +58,8 @@ const GameScene = class extends Phaser.Scene {
       platforms.create(width, GAME_HEIGHT, 'ground').refreshBody();
     }
 
-     this.physics.add.collider(this.player, platforms);
-     platforms = this.physics.add.staticGroup();
+    this.physics.add.collider(this.player, platforms);
+    platforms = this.physics.add.staticGroup();
 
     this.sfx = {
       explosions: [
@@ -125,7 +125,7 @@ const GameScene = class extends Phaser.Scene {
             Phaser.Math.Between(0, this.game.config.width),
             0,
           );
-        } else if (Phaser.Math.Between(0,7) >= 5) {
+        } else if (Phaser.Math.Between(0, 7) >= 5) {
           if (this.getEnemiesByType('ChaserShip').length < 5) {
             enemy = new ChaserShip(
               this,
