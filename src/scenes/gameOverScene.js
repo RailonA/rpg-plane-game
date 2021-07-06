@@ -4,7 +4,8 @@ import config from '../config/config';
 import Button from '../elements/Button';
 import { postScore } from '../entities/apiData';
 
-class GameOverScene extends Phaser.Scene {
+const GameOverScene = class extends Phaser.Scene {
+
   constructor() {
     super({ key: 'GameOver' });
   }

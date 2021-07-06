@@ -119,13 +119,13 @@ const GameScene = class extends Phaser.Scene {
       callback: () => {
         let enemy = null;
 
-        if (Phaser.Math.Between(0, 10) >= 3) {
+        if (Phaser.Math.Between(0, 7) >= 3) {
           enemy = new GunShip(
             this,
             Phaser.Math.Between(0, this.game.config.width),
             0,
           );
-        } else if (Phaser.Math.Between(0, 10) >= 5) {
+        } else if (Phaser.Math.Between(0,7) >= 5) {
           if (this.getEnemiesByType('ChaserShip').length < 5) {
             enemy = new ChaserShip(
               this,

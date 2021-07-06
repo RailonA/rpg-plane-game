@@ -45,19 +45,18 @@ const GuideScene = class extends Phaser.Scene {
       + '\n . If the player fails to kill the enemies and the enemy kills'
       + '\n the player, they loose a life for every laser hit. Until all given lifes get used up'
       + '\n Use arrow keys on the keyboard to'
-      + ' \n move up, down, left, right, and the space bar/ enter to shoot'
+      + '\n move up, down, left, right, and the space bar/ enter to shoot'
       + '\n ', {
       fontSize: '3em',
       fontFamily: 'sans-serif',
       color: '#fff',
       align: 'center',
-      // color: '#11edba',
     });
-    const style = 'background: url(assets/gh.png); width: 100px; height: 277px; border: none; font: 32px Georgia; color: #fff;';
-    const gameButton = this.add.dom(950, 180, 'Button1', style, 'Play');
+    
+    const style = 'width: 100px; height: 277px; border: none; font: 32px Georgia; color: #fff;';
+    const gameButton = this.add.dom(950, 180, 'blueButton1', style, 'Play');
 
     gameButton.addListener('click');
-
 
     gameButton.on('click', () => {
       if (input.node.value) {
