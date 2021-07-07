@@ -59,7 +59,7 @@ The rest of the days are for the following:
 
 ## Screenshots
 
-<img src="./build/assets/Screenshot.png">
+<img src="./dist/assets/Screenshot.png">
 
 ### Prerequisites
 - Javascript ES6
