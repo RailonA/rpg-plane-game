@@ -94,16 +94,9 @@ To get a local copy up and running follow these simple example steps.
 
 
 ## 🤝 Contributing
-
-Contributions, issues and feature requests are welcome!
+This project was created for educational purposes as part of the Microverse web development curriculum; contributing is not accepted.
 
 Feel free to check the [issues page](https://github.com/RailonA/rpg-plane-game/issues).
-
-1. Fork it (https://github.com/addod19/js_game_capstone/fork)
-2. Create your feature branch (git checkout -b my-new-feature)
-3. Commit your changes (git commit -am 'Add some feature')
-4. Push to the branch (git push origin my-new-feature)
-5. Create a new Pull Request
 
 ## Show your support
 
@@ -113,3 +106,6 @@ Give us a ⭐️ if you like this project!
 - Microverse
 - Developers at Open Game Art; Marcus Rasseli, Binngi, Aljazk, Sogomn, Redshrike, Qubodup for the characters, sprites, laser, sound, background music etc
                   
+## License
+
+This project is licensed under the MIT License
