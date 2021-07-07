@@ -70,7 +70,7 @@ The rest of the days are for the following:
 ## Live Demo
 
 
-[gh pages deployment](https://railona.github.io/rpg-plane-game/)
+[Live Demo Link](https://railona.github.io/rpg-plane-game/)
 
 
 ## Getting Started
