@@ -75,15 +75,10 @@
   },
   "os": [
     "darwin",
-    "linux",
-    "win32",
-    "win64"
+    "linux"
   ],
-  "arch": [
-    "any",
-    "x64"
-  ],
+  "arch": "any",
   "optionalDependencies": {
-    "fsevents": "^2.3.2"
+    "fsevents": "^1.2.9"
   }
 }
