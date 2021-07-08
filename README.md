@@ -79,7 +79,7 @@ To get a local copy up and running follow these simple example steps.
 
 1. `git clone git@github.com:RailonA/rpg-plane-game.git`
 2. `cd rpg-plane-game`
-3. `yarn —init`
+3. `yarn --init`
 4. `npm i`
 5. `yarn run webpack serve`
 6. Use live server on VSCode to open the index.html with your favorite browser
