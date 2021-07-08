@@ -3,6 +3,7 @@
 
 module.exports = {
   "extends": "stylelint-config-recommended",
+  "ignoreFiles": ["build/**", "dist/**", "**/reset*.css", "**/bootstrap*.css", "*/main.scss", "coverage/lcov-report/prettify.css", "coverage/lcov-report/base.css"],
   "rules": {
     "at-rule-empty-line-before": [ "always", {
       except: [
@@ -107,6 +108,5 @@ module.exports = {
     "value-list-comma-space-before": "never",
     "value-list-max-empty-lines": 0,
   },
-  "ignoreFiles": ["build/**", "dist/**", "**/reset*.css", "**/bootstrap*.css", "*/main.scss", "coverage/lcov-report/prettify.css", "coverage/lcov-report/base.css"]
-
+  
 }
