@@ -72,6 +72,8 @@
   },
   "engines": {
     "node": "16.4.0"
-  }
+  },
+  "os":["darwin", "linux", "win32", "win64"],
+  "arch":"any"
 
 }
