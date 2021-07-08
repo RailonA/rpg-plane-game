@@ -73,7 +73,7 @@
   "engines": {
     "node": "16.4.0"
   },
-  "os" : [ "darwin", "linux" ],
+  "os" : [ "darwin" ],
   "arch":"any"
 
 }
