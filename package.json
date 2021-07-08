@@ -79,5 +79,11 @@
     "win32",
     "win64"
   ],
-  "arch": ["any", "x64"]
+  "arch": [
+    "any",
+    "x64"
+  ],
+  "optionalDependencies": {
+    "fsevents": "^2.3.2"
+  }
 }
