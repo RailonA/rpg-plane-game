@@ -8,7 +8,7 @@ const DisplayScoreScene = class extends Phaser.Scene {
   }
 
   create() {
-    this.add.text(650, 200, 'Best 5 Marksmen', {
+    this.add.text(650, 200, 'Air Plane Game', {
       color: 'white',
       fontSize: '32px ',
       fontFamily: 'san-serif',
@@ -37,13 +37,22 @@ const DisplayScoreScene = class extends Phaser.Scene {
     });
 
     const style = 'width: 150px; height: 40px; border-radius: 30px; border: 0; font: 30px sans-serif; color: black;';
-    const btn = this.add.dom(650, 490, 'button', style, 'Guide');
-    btn.addListener('click');
+    const btn1 = this.add.dom(450, 490, 'button', style, 'Guide');
+    const btn2 = this.add.dom(750, 490, 'button', style, 'Back');
 
-    btn.on('click', () => {
+    btn1.addListener('click');
+    btn2.addListener('click');
+
+    btn1.on('click', () => {
       this.model = this.sys.game.globals.model;
       this.model.score = 0;
       this.scene.start('Guide');
+    });
+
+    btn2.on('click', () => {
+      this.model = this.sys.game.globals.model;
+      this.model.score = 0;
+      this.scene.start('Title');
     });
   }
 };

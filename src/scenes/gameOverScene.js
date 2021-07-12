@@ -14,23 +14,22 @@ class GameOverScene extends Phaser.Scene {
   }
 
   preload() {
-    // this.load.image('gameOverTitle', 'assets/gh.png');
-    this.load.image('bg-3', 'assets/background/Background-3.png');
+    // this.load.image('bg-3', 'assets/background/Background-3.png');
     this.load.audio('gameOverMusic', 'assets/battleMus.mp3');
   }
 
   create() {
-    // const image = this.add.image(this.cameras.main.width, this.cameras.main.height, 'sprBg0');
-    // const scaleX = this.cameras.main.width / image.width;
-    // const scaleY = this.cameras.main.height / image.height;
-    // const scale = Math.max(scaleX, scaleY);
-    // image.setScale(scale).setScrollFactor(1);
+    const image = this.add.image(this.cameras.main.width / 2, this.cameras.main.height / 2, 'bg-2');
+    const scaleX = this.cameras.main.width / image.width;
+    const scaleY = this.cameras.main.height / image.height;
+    const scale = Math.max(scaleX, scaleY);
+    image.setScale(scale).setScrollFactor(1);
 
     const user = this.sys.game.globals.model.userName;
 
     this.gameOver = this.sound.add('gameOverMusic', { volume: 0.07 });
     this.gameOver.play();
-    this.add.image(this.game.config.width * 0.5, 240, 'bg-3').setScale(0.35);
+    this.add.image(this.game.config.width * 0.5, 240, 'bg-2').setScale(0.35);
 
     this.btnRestart = this.add.sprite(
       this.game.config.width * 0.5,
