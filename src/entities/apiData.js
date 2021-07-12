@@ -1,7 +1,3 @@
-/* eslint-disable import/no-extraneous-dependencies */
-import 'regenerator-runtime';
-
-// global variables
 const apiKey = 'Zl4d7IVkemOTTVg2fUdz';
 const url = `https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/${apiKey}/scores`;
 
@@ -10,7 +6,6 @@ const postScore = async (name, s) => {
     user: name,
     score: s,
   };
-    // request options
   const payload = {
     method: 'POST',
     mode: 'cors',
@@ -21,7 +16,6 @@ const postScore = async (name, s) => {
     body: JSON.stringify(userScore),
   };
 
-  // send POST request
   const response = await fetch(url, payload);
   const data = await response.json();
   return data;

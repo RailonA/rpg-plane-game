@@ -2,8 +2,6 @@ import Phaser from 'phaser';
 
 import config from '../config/config';
 
-/* eslint no-undef: "error" */
-
 const GuideScene = class extends Phaser.Scene {
   constructor() {
     super('Guide');

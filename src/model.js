@@ -2,7 +2,6 @@
 
 const Model = class {
   constructor() {
-    /* Set up private variables */
     this._soundOn = true;
     this._musicOn = true;
     this._bgMusicPlaying = false;
@@ -10,7 +9,6 @@ const Model = class {
     this.score = 0;
   }
 
-  /* Setter and Getter methods */
   set musicOn(value) {
     this._musicOn = value;
   }

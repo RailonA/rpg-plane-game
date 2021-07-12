@@ -1,8 +1,5 @@
 import Phaser from 'phaser';
 
-/* eslint no-undef: 'error' */
-/* eslint import/no-unresolved: 'error' */
-
 export default class BootScene extends Phaser.Scene {
   constructor() {
     super('Boot');
@@ -19,7 +16,7 @@ export default class BootScene extends Phaser.Scene {
 
     this.load.image('checkedBox', './assets/ui/blue_bocCheckmark.png');
 
-    this.load.image('sprLifes', './assets/player/life.png');
+    this.load.image('sprLifes', './assets/game/life.png');
 
     this.load.image('sprEnemy1', './assets/enemy/enemyShip.png');
     this.load.image('sprLaserEnemy0', './assets/enemy/laserRed.png');

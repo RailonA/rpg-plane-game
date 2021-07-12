@@ -3,8 +3,6 @@ import Phaser from 'phaser';
 import Entity from './Entity';
 import EnemyLaser from './EnemyLaser';
 
-/* eslint max-classes-per-file: "error" */
-
 const ChaserShip = class extends Entity {
   constructor(scene, x, y) {
     super(scene, x, y, 'sprEnemy1', 'ChaserShip');

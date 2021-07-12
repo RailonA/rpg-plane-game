@@ -1,7 +1,5 @@
 import Phaser from 'phaser';
-/* eslint no-undef: "error" */
-/*  eslint class-methods-use-this: ["error", { "exceptMethods": ["preload"] }]  */
-/*  eslint class-methods-use-this: ["error", { "exceptMethods": ["postScore"] }]  */
+
 import { getScores } from '../entities/apiData';
 
 const DisplayScoreScene = class extends Phaser.Scene {

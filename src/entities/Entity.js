@@ -1,7 +1,5 @@
 import Phaser from 'phaser';
 
-/* eslint func-names: ["error", "always"] */
-
 const Entity = class extends Phaser.GameObjects.Sprite {
   constructor(scene, x, y, key, type, health) {
     super(scene, x, y, key);
@@ -17,7 +15,7 @@ const Entity = class extends Phaser.GameObjects.Sprite {
   explode(canDestroy) {
     if (!this.getData('isDead')) {
       this.setTexture('sprExplosion');
-      this.play('sprExplosion');
+      this.play('explosion');
 
       if (this.shootTimer !== undefined) {
         if (this.shootTimer) {

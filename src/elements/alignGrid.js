@@ -1,8 +1,4 @@
-/* global col */
-/* eslint no-undef: "error" */
-/* global game */
-/* eslint no-undef: "error" */
-
+/* eslint-disable no-undef */
 const AlignGrid = class {
   constructor(config) {
     this.config = config;
@@ -16,10 +12,10 @@ const AlignGrid = class {
       config.cols = 5;
     }
     if (!config.height) {
-      config.height = game.config.height;
+      config.height = this.config.height;
     }
     if (!config.width) {
-      config.width = game.config.width;
+      config.width = this.config.width;
     }
     this.scene = config.scene;
 

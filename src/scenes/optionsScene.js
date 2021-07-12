@@ -3,8 +3,6 @@ import Phaser from 'phaser';
 import config from '../config/config';
 import Button from '../elements/Button';
 
-/* eslint no-undef: "error" */
-
 const OptionsScene = class extends Phaser.Scene {
   constructor() {
     super('Options');

@@ -2,8 +2,6 @@
 import Phaser from 'phaser';
 import { GAME_HEIGHT, GAME_WIDTH } from '../config/const-variable';
 
-/* eslint no-unused-vars: 2 */
-
 import Player from '../entities/Player';
 import ChaserShip from '../entities/Enemy1';
 import GunShip from '../entities/GunShip';
@@ -11,8 +9,6 @@ import CarrierShip from '../entities/Enemy2';
 import Background from '../entities/Background';
 
 let platforms;
-/* eslint no-undef: 'error' */
-/* eslint no-plusplus: "error" */
 
 const GameScene = class extends Phaser.Scene {
   constructor() {
@@ -25,6 +21,21 @@ const GameScene = class extends Phaser.Scene {
     this.load.audio('sndLaser', './assets/laser1.wav');
 
     this.load.image('bg-1', './assets/background/Background-1.png');
+
+    this.load.spritesheet('sprEnemy2', './assets/enemy/enemyUFO.png', {
+      frameWidth: 16,
+      frameHeight: 16,
+    });
+
+    this.load.spritesheet('sprPlayer', './assets/player/player.png', {
+      frameWidth: 16,
+      frameHeight: 16,
+    });
+
+    this.load.spritesheet('sprExplosion', './assets/explosion.png', {
+      frameWidth: 32,
+      frameHeight: 32,
+    });
 
     if (typeof player !== 'undefined') {
       this.body.setVelocity(0, 0);
@@ -69,6 +80,12 @@ const GameScene = class extends Phaser.Scene {
       laser: this.sound.add('sndLaser'),
     };
 
+    this.anims.create({
+      key: 'explosion',
+      frames: this.anims.generateFrameNumbers('sprExplosion', { start: 0, end: 6 }),
+      frameRate: 10,
+    });
+
     this.lifes = this.add.image(20, 20, 'sprLifes').setScale(1.6);
 
     this.playerScore = this.add.text(40, 60, 'Score: 0', {
@@ -98,21 +115,6 @@ const GameScene = class extends Phaser.Scene {
     this.enemies = this.add.group();
     this.enemyLasers = this.add.group();
     this.playerLasers = this.add.group();
-
-    this.load.spritesheet('sprEnemy2', './assets/enemy/enemyUFO.png', {
-      frameWidth: 16,
-      frameHeight: 16,
-    });
-
-    this.load.spritesheet('sprPlayer', './assets/enemy/player.png', {
-      frameWidth: 16,
-      frameHeight: 16,
-    });
-
-    this.load.spritesheet('sprExplosion', './assets/explosion.png', {
-      frameWidth: 32,
-      frameHeight: 32,
-    });
 
     this.time.addEvent({
       delay: 1000,
@@ -151,7 +153,6 @@ const GameScene = class extends Phaser.Scene {
     });
 
     this.physics.add.collider(this.playerLasers, this.enemies, (playerLaser, enemy) => {
-      // destroy enemy if hit by laser
       if (enemy) {
         if (enemy.onDestroy !== undefined) {
           enemy.onDestroy();
@@ -232,7 +233,6 @@ const GameScene = class extends Phaser.Scene {
         }
       }
     }
-    // Frees up processing power and memory
     for (let i = 0; i < this.enemyLasers.getChildren().length; i += 1) {
       const laser = this.enemyLasers.getChildren()[i];
       laser.update();
