@@ -68,7 +68,7 @@
   },
   "main": "index.js",
   "directories": {
-    "test": "jest"
+    "test": "test"
   },
   "engines": {
     "node": "16.4.0"
