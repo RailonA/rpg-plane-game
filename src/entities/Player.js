@@ -50,7 +50,7 @@ const Player = class extends Entity {
     this.scene.time.addEvent({
       delay: 1000,
       callback() {
-        this.scene.start('GameOver');
+        this.scene.scene.start('GameOver');
       },
       callbackScope: this,
       loop: false,

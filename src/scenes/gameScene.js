@@ -108,6 +108,21 @@ const GameScene = class extends Phaser.Scene {
     this.enemyLasers = this.add.group();
     this.playerLasers = this.add.group();
 
+    this.load.spritesheet('sprEnemy2', 'assets/content/enemyUFO.png', {
+      frameWidth: 16,
+      frameHeight: 16,
+    });
+
+    this.load.spritesheet('sprPlayer', 'assets/content/player.png', {
+      frameWidth: 16,
+      frameHeight: 16,
+    });
+
+    this.load.spritesheet('sprExplosion', 'content/explosion.png', {
+      frameWidth: 32,
+      frameHeight: 32,
+    });
+
     this.time.addEvent({
       delay: 1000,
       callback: () => {
@@ -225,6 +240,7 @@ const GameScene = class extends Phaser.Scene {
         }
       }
     }
+
     for (let i = 0; i < this.enemyLasers.getChildren().length; i += 1) {
       const laser = this.enemyLasers.getChildren()[i];
       laser.update();
