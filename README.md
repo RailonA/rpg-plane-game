@@ -98,7 +98,6 @@ To get a local copy up and running follow these simple example steps.
 5. Run :`yarn run webpack serve` ( Use live server on VSCode to open the index.html with your favorite browser )
 6. Run all the tests : `yarn run test`
 
-
 ## Authors
 
 👤 **Railon Acosta**
