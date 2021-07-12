@@ -1,3 +1,4 @@
+/* eslint-disable import/no-extraneous-dependencies */
 import 'regenerator-runtime';
 
 const apiKey = 'Zl4d7IVkemOTTVg2fUdz';
