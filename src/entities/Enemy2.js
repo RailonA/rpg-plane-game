@@ -13,7 +13,7 @@ const CarrierShip = class extends Entity {
       CHASE: 'CHASE',
     };
     this.state = this.states.MOVE_DOWN;
-    // this.play('sprEnemy2');
+    this.play('sprEnemy2');
   }
 
   update() {
@@ -45,12 +45,6 @@ const CarrierShip = class extends Entity {
     } else {
       this.angle += 5;
     }
-    // if (this.layers.getChildren()[0].y > 0) {
-    //   for (let i = 0; i < this.layers.getChildren().length; i++) {
-    //     let layer = this.layers.getChildren()[i];
-    //     layer.y = ( -layer.displayHeight) + (layer.displayHeight * i);
-    //   }
-    // }
   }
 };
 

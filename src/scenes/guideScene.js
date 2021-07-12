@@ -51,8 +51,8 @@ const GuideScene = class extends Phaser.Scene {
       align: 'center',
     });
 
-    const style = 'width: 100px; height: 277px; border: none; font: 32px Georgia; color: #fff;';
-    const gameButton = this.add.dom(950, 180, 'blueButton1', style, 'Play');
+    const style = 'width: 60px; height: 50px; border: none; font: 32px Georgia; color: #fff; background-color: #34aeeb; padding: 10px;';
+    const gameButton = this.add.dom(950, 80, 'blueButton1', style, 'Play');
 
     gameButton.addListener('click');
 

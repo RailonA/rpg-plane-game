@@ -16,8 +16,8 @@ const GameScene = class extends Phaser.Scene {
   }
 
   preload() {
-    this.load.audio('sndExplode0', './assets/laser1.wav');
-    this.load.audio('sndExplode1', './assets/laser1.wav');
+    this.load.audio('sndExplode0', './assets/explosionSoundEffect.mp3');
+    this.load.audio('sndExplode1', './assets/explosionSoundEffect.mp3');
     this.load.audio('sndLaser', './assets/laser1.wav');
 
     this.load.image('bg-1', './assets/background/Background-1.png');
@@ -71,14 +71,6 @@ const GameScene = class extends Phaser.Scene {
 
     this.physics.add.collider(this.player, platforms);
     platforms = this.physics.add.staticGroup();
-
-    this.sfx = {
-      explosions: [
-        this.sound.add('sndExplode0'),
-        this.sound.add('sndExplode1'),
-      ],
-      laser: this.sound.add('sndLaser'),
-    };
 
     this.anims.create({
       key: 'explosion',
