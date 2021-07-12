@@ -27,6 +27,5 @@ module.exports = {
 
   devServer: {
     contentBase: path.resolve(__dirname, 'dist'),
-    compress: true,
   },
-};git add . 
+};
