@@ -1,5 +1,4 @@
 const path = require('path');
-const webpack = require('webpack');
 
 module.exports = {
   entry: {
@@ -19,14 +18,14 @@ module.exports = {
         use: {
           loader: 'babel-loader',
           options: {
-            presets: ['env']
-          }
-        }
-      }
-    ]
+            presets: ['@babel/preset-env'],
+          },
+        },
+      },
+    ],
   },
 
   devServer: {
-    contentBase: path.resolve(__dirname, 'build'),
-  }
-}
+    contentBase: path.resolve(__dirname, 'dist'),
+  },
+};
