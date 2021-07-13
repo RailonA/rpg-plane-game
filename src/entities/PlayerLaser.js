@@ -1,4 +1,3 @@
-/* eslint-disable class-methods-use-this */
 import Entity from './Entity';
 
 const PlayerLaser = class extends Entity {
@@ -13,7 +12,7 @@ const PlayerLaser = class extends Entity {
     scene.physics.add.collider(this, scene.enemies, this.handleHit, null, this);
   }
 
-  handleHit(laserSprite, enemySprite) {
+  handleHit = (laserSprite, enemySprite) => {
     enemySprite.destroy(true);
     laserSprite.destroy(true);
   }

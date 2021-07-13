@@ -1,5 +1,3 @@
-/* eslint-disable max-len */
-/* eslint-disable class-methods-use-this */
 import Phaser from 'phaser';
 import config from '../config/config';
 import Button from '../objects/button';
@@ -44,11 +42,12 @@ export default class TitleScene extends Phaser.Scene {
   centerButton(gameObject, offset = 0) {
     Phaser.Display.Align.In.Center(
       gameObject,
-      this.add.zone(config.width / 2, config.height / 2 - offset * 100, config.width, config.height),
+      this.add.zone(config.width / 2, config.height / 2 - offset * 100,
+        config.width, config.height),
     );
   }
 
-  centerButtonText(gameText, gameButton) {
+  centerButtonText = (gameText, gameButton) => {
     Phaser.Display.Align.In.Center(
       gameText,
       gameButton,

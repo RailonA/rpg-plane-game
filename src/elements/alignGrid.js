@@ -1,4 +1,3 @@
-/* eslint-disable no-undef */
 const AlignGrid = class {
   constructor(config) {
     this.config = config;
@@ -53,7 +52,7 @@ const AlignGrid = class {
 
   findNearestIndex(xx, yy) {
     const row = Math.floor(yy / this.ch);
-    const index = (row * this.config.cols) + col;
+    const index = (row * this.config.cols) + this.col;
     return index;
   }
 
