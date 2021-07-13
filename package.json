@@ -52,12 +52,13 @@
     "webpack-hot-middleware": "^2.25.0"
   },
   "dependencies": {
-    "regenerator-runtime": "^0.13.7",
+    "@jest/globals": "^25.5.2",
     "eslint-plugin-json": "^3.0.0",
     "express": "^4.17.1",
     "file-loader": "^6.0.0",
     "jest-canvas-mock": "^2.3.1",
     "phaser": "^3.23.0",
+    "regenerator-runtime": "^0.13.7",
     "url-loader": "^4.1.0"
   },
   "jest": {
