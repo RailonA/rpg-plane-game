@@ -1,3 +1,4 @@
+/* eslint-disable no-underscore-dangle */
 import { getScores } from '../src/entities/apiData';
 import Model from '../src/model';
 
